@@ -5,7 +5,7 @@ const Header = () => {
     
     return (
         <header className="header">
-            <h1 className="headear__title">Cellmondo</h1>
+            <h1 className="header__title">Cellmondo</h1>
             <NavBar isHeader={isHeader}/>
         </header>
     )

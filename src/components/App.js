@@ -8,7 +8,7 @@ const App = () => {
     <>
       <Header/>
       <Main/>
-      <ItemListContainer greeting="Nashe"/>
+      <ItemListContainer greeting="Prueba de Greeting"/>
       <Footer/>
     </>
   )

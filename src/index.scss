@@ -25,7 +25,7 @@ html , body , #root {
   justify-content: space-between;
 
   &__title{
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
   &__nav{
@@ -36,7 +36,14 @@ html , body , #root {
   &__link{
     text-decoration: none;
     color: #fff;
-    margin-left: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+
+    &:hover{
+      border-bottom: #00a8e8 4px solid;
+      transition: border-bottom .5s;
+    }
   }
 }
 
@@ -53,6 +60,35 @@ html , body , #root {
 }
 
 .material-icons{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-left: 1rem
+}
+
+.cartshopping{
+  position: relative;
+
+  &__count{
+    position: absolute;
+    top: -16px;
+    left: 30px;
+    border-radius: 16px;
+    width: 15px;
+    height: 18px;
+    background-color: #fff;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+  }
+
+  &__btn{
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    &:hover{
+      color: #00a8e8;
+    }
+  }
 }

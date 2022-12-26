@@ -1,10 +1,12 @@
+import CartWidget from "./CartWidget";
+
 const NavBar = (props) => {
     if (props.isHeader){
         return(
             <nav className="header__nav">
-                <a className="header__link" href="#" >Celulares</a>
-                <a className="header__link" href="#">Accesorios</a>
-                <span class="material-icons">shopping_cart</span>
+                <a className="header__link" href="#/" >Celulares</a>
+                <a className="header__link" href="#/">Accesorios</a>
+                <CartWidget/>
             </nav>
         )
     } else{
