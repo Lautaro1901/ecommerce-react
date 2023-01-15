@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+
+//Reset
 *{
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
   list-style: none;
 }
 
+//Global
 html , body , #root {
   height: 100%;
 }
@@ -16,16 +19,18 @@ html , body , #root {
   flex-direction: column;
 }
 
+// Header
 .header {
   background: #000000;
-  color: #fff;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   &__title{
-    font-size: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
   }
   
   &__nav{
@@ -45,18 +50,6 @@ html , body , #root {
       transition: border-bottom .5s;
     }
   }
-}
-
-.main{
-  flex-grow: 1;
-  background-color: #e5e5e5;
-}
-
-.footer{
-  background: #000000;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
 }
 
 .material-icons{
@@ -86,9 +79,81 @@ html , body , #root {
     border: none;
     outline: none;
     cursor: pointer;
-    
     &:hover{
       color: #00a8e8;
     }
   }
+}
+
+// Main
+.main{
+  flex-grow: 1;
+  background-color: #e5e5e5;
+}
+
+.conteiner{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-gap: 1.5rem
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 450px;
+  background-color: #fff;
+  margin: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 15px;
+
+  &__img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  &__title{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  &__price{
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+
+  &__description{
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+
+  // &__btn{
+  //   background-color: #00a8e8;
+  //   color: #fff;
+  //   border: none;
+  //   outline: none;
+  //   cursor: pointer;
+  //   padding: 1rem;
+  //   border-radius: 10px;
+  //   margin-top: auto;
+  //   font-size: auto;
+  //   transition: background-color .5s;
+
+  //   &:hover{
+  //     background-color: #fff;
+  //     color: #00a8e8;
+  //     border: 1px solid #00a8e8;
+  //   }
+  // }
+}
+
+// Footer
+.footer{
+  background: #000000;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }

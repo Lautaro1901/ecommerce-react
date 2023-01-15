@@ -1,16 +1,15 @@
 import Header from "./Header";
 import Main from "./Main";
-import ItemListContainer from "./ItemListContainer";
 import Footer from "./Footer";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <Header/>
       <Main/>
-      <ItemListContainer greeting="Prueba de Greeting"/>
       <Footer/>
-    </>
+    </BrowserRouter>
   )
 }
 
