@@ -5,8 +5,16 @@ const NavBar = (props) => {
     if (props.isHeader){
         return(
             <nav className="header__nav">
-                <Link to={"/products"} className="header__link" href="#/" >All Products</Link>
-                <Link to={"/categories"} className="header__link" href="#/">Categories</Link>
+                <Link to={"/products"} className="header__link">All Products</Link>
+                <div className="dropdown">
+                    <button className="dropbtn">Categories</button>
+                    <div className="dropdown-content">
+                        <Link to={"/categories/clothes"}>Clothes</Link>
+                        <Link to={"/categories/electronics"}>Electronics</Link>
+                        <Link to={"/categories/shoes"}>Shoes</Link>   
+                        <Link to={"/categories/furniture"}>Furniture</Link>   
+                    </div>
+                </div>
                 <CartWidget/>
             </nav>
         )
