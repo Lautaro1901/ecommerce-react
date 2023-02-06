@@ -1,15 +1,20 @@
+import { BrowserRouter } from "react-router-dom";
+import CustomProvider from "./CustomProvider";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
-import { BrowserRouter } from "react-router-dom";
+
+
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header/>
-      <Main/>
-      <Footer/>
-    </BrowserRouter>
+    <CustomProvider>
+      <BrowserRouter>
+        <Header/>
+        <Main/>
+        <Footer/>
+      </BrowserRouter>
+    </CustomProvider>
   )
 }
 

@@ -2,52 +2,29 @@ import { useState, useEffect} from "react";
 import ItemList from "./ItemList";
 import { SpinningCircles } from 'react-loading-icons'
 import { useParams } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { collection, getDocs, query, where} from "firebase/firestore";
+import { db } from "../firebase";
 
 const ItemListContainer = () => {
-    
+
     const [load, setLoad] = useState (false)
     const [productos, setProductos] = useState ([])
 
     const params = useParams()
-    const location = useLocation().pathname
-
-    const obtenerUrl = () => {
-        
-        if( location === "/"){
-            return "https://api.escuelajs.co/api/v1/products?offset=0&limit=10"
-        }
-        
-        if( location === "/products"){
-            return "https://api.escuelajs.co/api/v1/products"
-        }
-        
-        if( location.startsWith('/categories/')){
-            switch(params.categoria){
-                case "clothes" : return "https://api.escuelajs.co/api/v1/products/?categoryId=1"
-                case "electronics" : return "https://api.escuelajs.co/api/v1/products/?categoryId=2"
-                case "furniture" : return "https://api.escuelajs.co/api/v1/products/?categoryId=3"
-                case "shoes" : return "https://api.escuelajs.co/api/v1/products/?categoryId=4"
-                default : return ""
-            }
-        }
-    }
-
 
     useEffect (() => {
+        console.log (params)
+        const productosCollection = collection(db, "productos")
 
-        const pedido = fetch(obtenerUrl())
-
-        pedido.then((respuesta) => {
-            const productos = respuesta.json()
-            return productos
-        })
-        .then((productos) => {
+        getDocs(!params.hasOwnProperty ('categoria') ? productosCollection : query(productosCollection, where("category", "==", params.categoria))).then ((consulta) => {
+            const productos = consulta.docs.map ((doc) => {
+                return {id: doc.id, ...doc.data()}
+            })
             setProductos(productos)
             setLoad(true)
         })
-        .catch((error) => {
-            console.log(error)
+        .catch ((error) => {
+            console.log ("Error searching products", error)
         })
     },[params])
 
