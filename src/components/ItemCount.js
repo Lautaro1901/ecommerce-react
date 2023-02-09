@@ -13,17 +13,17 @@ const ItemCount = ({stock, onAdd}) => {
     }
 
     const decrease = () => {
-        if (count > 0) {   
+        if (count > 1) {   
             onAdd(count - 1)
             setCount(count - 1)
     }
 }
 
     return (
-        <div>
-            <button onClick={decrease}>-</button>
-            <p>Cantidad: {count}</p>
-            <button onClick={increase}>+</button>
+        <div className='count'>
+            <button className='count__decrease' onClick={decrease}>-</button>
+            <p className='count__amount'>Cantidad: {count}</p>
+            <button className='count__increase' onClick={increase}>+</button>
         </div>
     )
 }

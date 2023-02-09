@@ -9,14 +9,16 @@ const ItemCart = ({producto}) => {
     }
 
     return (
-        <li className="card">
-            <img src={producto.item.image} alt="" className="card__img" />
-            <h2 className="card__title">{producto.item.title}</h2>
-            <p className="card__description">{producto.item.description}</p>
-            <p className="card__price">{"Price: $" + producto.item.price}</p>
-            <p className="card__cantidad">{"Cantidad: " + producto.cantidad}</p>
-            <p className="card__total">{"Total: $" + producto.item.price * producto.cantidad}</p>
-            <button className="detail__btn" onClick={eliminarCarrito}>Eliminar</button>
+        <li className="cart">
+                <img src={producto.item.image} alt="" className="cart__img" />
+                <div className='cart__container'>
+                    <h2 className="cart__title">{producto.item.title}</h2>
+                    <p className="cart__description">{producto.item.description}</p>
+                    <p className="cart__price">{"Price: $" + producto.item.price}</p>
+                    <p className="cart__cantidad">{"Cantidad: " + producto.cantidad}</p>
+                    <p className="cart__total">{"Total: $" + producto.item.price * producto.cantidad}</p>
+                    <button className="cart__btn" onClick={eliminarCarrito}>Eliminar del Carrito</button>
+                </div>
         </li>
     )
 }

@@ -26,8 +26,8 @@ const ItemDetail = ({producto, images, description, title, stock}) => {
                     <p className="detail__description">{producto.description}</p>
                     <p className="detail__price">{"Price: $" + producto.price}</p>
                     <p className="detail__stock">{"Stock: " + producto.stock}</p>
-                    <button className="detail__btn" onClick={agregarAlCarro}>Confirmar</button>
                     <ItemCount stock={producto.stock} onAdd={onAdd}/>
+                    <button className="detail__btn" onClick={agregarAlCarro}>Confirmar</button>
                 </div>
             </div>
     )
