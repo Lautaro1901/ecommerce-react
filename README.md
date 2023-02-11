@@ -1,7 +1,6 @@
 # E-Commerce 
 
 ![image](readme/reactApp.gif)
-
 ## Descripción
 
 E-Commerce desarrollado como proyecto final para el curso de React de [Coderhouse](https://www.coderhouse.com/)
