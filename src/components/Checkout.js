@@ -58,18 +58,23 @@ const Checkout = () => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label>Nombre</label>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-                <label>Email</label>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <label>Telefono</label>
-                <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
-                <label>Direccion</label>
-                <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-                <label>Codigo Postal</label>
-                <input type="text" value={zip} onChange={(e) => setZip(e.target.value)} />
-                <button type="submit">Confirmar</button>
+            <form className='form' onSubmit={handleSubmit}>
+                <label className='form__label'>Nombre</label>
+                <input className='form__input' type="text" value={name} onChange={(e) => setName(e.target.value)} />
+
+                <label className='form__label'>Email</label>
+                <input className='form__input' type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+
+                <label className='form__label'>Telefono</label>
+                <input className='form__input' type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+
+                <label className='form__label'>Direccion</label>
+                <input className='form__input' type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
+
+                <label className='form__label'>Codigo Postal</label>
+                <input className='form__input' type="text" value={zip} onChange={(e) => setZip(e.target.value)} />
+
+                <button className='form__btn' type="submit">Confirmar</button>
             </form>
             <CheckoutCard card={setCard}/>
         </div>

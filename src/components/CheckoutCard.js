@@ -11,17 +11,17 @@ const CheckoutCard = ({card}) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Card Number</label>
-            <input type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
+        <form className='formTarjeta' onSubmit={handleSubmit}>
+            <label className='formTarjeta__label'>Numero de Tarjeta</label>
+            <input className='formTarjeta__input'type="text" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} />
 
-            <label>Expiry Date</label>
-            <input type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
+            <label className='formTarjeta__label'>Fecha de vencimiento</label>
+            <input className='formTarjeta__input'type="text" value={expiryDate} onChange={(e) => setExpiryDate(e.target.value)} />
 
-            <label>CVV</label>
-            <input type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} />
+            <label className='formTarjeta__label'>CVV</label>
+            <input className='formTarjeta__input'type="text" value={cvv} onChange={(e) => setCvv(e.target.value)} />
 
-            <button type="submit">Verificar Tarjeta</button>
+            <button className='formTarjeta__btn'type="submit">Verificar Tarjeta</button>
         </form>
     );
 };
